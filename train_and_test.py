@@ -5,11 +5,7 @@ from ray.rllib.algorithms.algorithm import Algorithm
 from ray.air.integrations.wandb import WandbLoggerCallback
 
 
-config = PPOConfig()
-        .environment(env="CartPole-v1")  # 環境に関する設定を上書き
-        .rollouts(num_rollout_workers=6)  # 訓練に関する設定を上書き
-        .training(train_batch_size=20000)  # 経験収集に関する設定を上書き
-
+config = PPOConfig().environment(env="CartPole-v1").rollouts(num_rollout_workers=6).training(train_batch_size=20000)
 
 tuner = tune.Tuner(
     "PPO",
