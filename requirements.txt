@@ -1,0 +1,5 @@
+torch
+ray[rllib, train, tune]
+gymnasium
+pygame
+wandb
